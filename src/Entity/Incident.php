@@ -69,6 +69,12 @@ class Incident extends Entity
      * @JMS\SerializedName("scheduled_at")
      */
     protected $scheduledAt;
+    
+    /**
+     * @var string
+     * @JMS\Type("string")
+     */
+    protected $template;
 
     /**
      * Get the value of Name
@@ -97,7 +103,7 @@ class Incident extends Entity
     /**
      * Get the value of Message
      *
-     * @return int
+     * @return string
      */
     public function getMessage()
     {
@@ -107,7 +113,7 @@ class Incident extends Entity
     /**
      * Set the value of Message
      *
-     * @param int message
+     * @param string message
      *
      * @return self
      */
@@ -254,6 +260,30 @@ class Incident extends Entity
     public function setScheduledAt(DateTime $scheduledAt)
     {
         $this->scheduledAt = $scheduledAt;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Message
+     *
+     * @return string
+     */
+    public function getTemplate()
+    {
+        return $this->template;
+    }
+
+    /**
+     * Set the value of Template
+     *
+     * @param string template
+     *
+     * @return self
+     */
+    public function setTemplate($template)
+    {
+        $this->template = $template;
 
         return $this;
     }
